@@ -1,0 +1,9 @@
+{
+  "name": "appmixer.mcpservers.paypal_mcp",
+  "version": "1.0.0",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.8.0",
+    "pidusage": "4.0.1",
+    "@paypal/mcp": "0.3.3"
+  }
+}

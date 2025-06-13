@@ -1,0 +1,42 @@
+{
+    "name": "appmixer.mcpservers.paypal_mcp.MCPServer",
+    "label": "MCP - PayPal",
+    "author": "Appmixer <info@appmixer.com>",
+    "description": "Allows you to integrate with PayPal APIs through function calling. This protocol supports various tools to interact with different PayPal services. (@paypal/mcp 0.3.2). Documentation: <a target=_blank href='https://github.com/paypal/agent-toolkit/tree/main/modelcontextprotocol'>https://github.com/paypal/agent-toolkit/tree/main/modelcontextprotocol</a>",
+    "auth": { "service": "appmixer:mcpservers:paypal_mcp" },
+    "properties": {
+        "schema": {
+            "type": "object",
+            "properties": {
+                "tools": { "type": "array" }
+            }
+        },
+        "inspector": {
+            "inputs": {
+                "tools": {
+                    "label": "Tools",
+                    "type": "multiselect",
+                    "tooltip": "Leave as is if you want to use all tools. Otherwise, select the tools you want to use.",
+                    "index": 1,
+                    "source": {
+                        "url": "/component/appmixer/mcpservers/paypal_mcp/ListTools?outPort=out",
+                        "data": {
+                            "transform": "./ListTools#toolsToSelectArray"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "inPorts": [{
+        "name": "in"
+    }],
+    "outPorts": [{
+        "name": "out",
+        "options": [{
+            "label": "Output",
+            "value": "output"
+        }]
+    }],
+    "icon": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1ODQuNzk4IiBoZWlnaHQ9IjcyMCIgdmlld0JveD0iMCAwIDE1NC43MjggMTkwLjUiIHhtbG5zOnY9Imh0dHBzOi8vdmVjdGEuaW8vbmFubyI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoODk4LjE5MiAyNzYuMDcxKSI+PHBhdGggY2xpcC1wYXRoPSJub25lIiBkPSJNLTgzNy42NjMtMjM3Ljk2OGE1LjQ5IDUuNDkgMCAwIDAtNS40MjMgNC42MzNsLTkuMDEzIDU3LjE1LTguMjgxIDUyLjUxNC0uMDA1LjA0NC4wMS0uMDQ0IDguMjgxLTUyLjUxNGMuNDIxLTIuNjY5IDIuNzE5LTQuNjMzIDUuNDItNC42MzNoMjYuNDA0YzI2LjU3MyAwIDQ5LjEyNy0xOS4zODcgNTMuMjQ2LTQ1LjY1OC4zMTQtMS45OTYuNDgyLTMuOTczLjUyLTUuOTI0di0uMDAzaC0uMDAzYy02Ljc1My0zLjU0My0xNC42ODMtNS41NjUtMjMuMzcyLTUuNTY1eiIgZmlsbD0iIzAwMWM2NCIvPjxwYXRoIGNsaXAtcGF0aD0ibm9uZSIgZD0iTS03NjYuNTA2LTIzMi40MDJjLS4wMzcgMS45NTEtLjIwNyAzLjkzLS41MiA1LjkyNi00LjExOSAyNi4yNzEtMjYuNjczIDQ1LjY1OC01My4yNDYgNDUuNjU4aC0yNi40MDRjLTIuNzAxIDAtNC45OTkgMS45NjQtNS40MiA0LjYzM2wtOC4yODEgNTIuNTE0LTUuMTk3IDMyLjk0N2E0LjQ2IDQuNDYgMCAwIDAgNC40MDUgNS4xNTNoMjguNjZhNS40OSA1LjQ5IDAgMCAwIDUuNDIzLTQuNjMzbDcuNTUtNDcuODgxYy40MjMtMi42NjkgMi43MjItNC42MzYgNS40MjMtNC42MzZoMTYuODc2YzI2LjU3MyAwIDQ5LjEyNC0xOS4zODYgNTMuMjQzLTQ1LjY1NSAyLjkyNC0xOC42NDktNi40Ni0zNS42MTQtMjIuNTExLTQ0LjAyNnoiIGZpbGw9IiMwMDcwZTAiLz48cGF0aCBjbGlwLXBhdGg9Im5vbmUiIGQ9Ik0tODcwLjIyNS0yNzYuMDcxYTUuNDkgNS40OSAwIDAgMC01LjQyMyA0LjYzNmwtMjIuNDg5IDE0Mi42MDhhNC40NiA0LjQ2IDAgMCAwIDQuNDA1IDUuMTU2aDMzLjM1MWw4LjI4MS01Mi41MTQgOS4wMTMtNTcuMTVhNS40OSA1LjQ5IDAgMCAxIDUuNDIzLTQuNjMzaDQ3Ljc4MmM4LjY5MSAwIDE2LjYyMSAyLjAyNSAyMy4zNzUgNS41NjMuNDYtMjMuOTE3LTE5LjI3NS00My42NjYtNDYuNDEyLTQzLjY2NnoiIGZpbGw9IiMwMDMwODciLz48L2c+PC9zdmc+"
+}
